@@ -26,5 +26,11 @@ class User < ActiveRecord::Base
       errors.add(:username, :invalid)
     end
   end
-
+  def avatar_url(size)
+    gravatar_id = Digest::MD5::hexdigest(self.email).downcase
+    "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
+  end
+  def after_sign_in_path_for(resource)
+    user_path(current_user)
+  end
 end
