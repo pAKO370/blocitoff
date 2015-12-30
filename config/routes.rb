@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:edit, :update, :show]
 
+  get '/profile', to: 'users#show' #made route to display profile instead of user/2
+
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
