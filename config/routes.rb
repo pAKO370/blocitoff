@@ -1,7 +1,17 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  get 'user/index'
 
-  get 'welcome/about'
+  #get 'user/show'
+
+  devise_for :users
+
+  #get 'welcome/index'
+
+  #get 'welcome/about'
+
+  resources :users, only: [:edit, :update, :show]
+
+  get '/profile', to: 'users#show' #made route to display profile instead of user/2
 
   root 'welcome#index'
 

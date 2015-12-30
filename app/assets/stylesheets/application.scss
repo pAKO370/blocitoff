@@ -1,0 +1,90 @@
+/*
+* This is a manifest file that'll be compiled into application.css, which will include all the files
+* listed below.
+*
+* Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+* or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+*
+* You're free to add application-wide styles to this file and they'll appear at the bottom of the
+* compiled file so the styles you add here take precedence over styles defined in any styles
+* defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+* file per style scope.
+*
+*= require_tree .
+*= require_self
+*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Chewy);
+@import url(https://fonts.googleapis.com/css?family=Fjalla+One);
+
+body {
+background-image: url("http://backgroundidea.info/wp-content/uploads/2015/03/plain-white-backgrounds-for-tumblr-wallpapers-for-simple-white-tumblr-backgrounds-awesome.jpg");
+
+}
+
+.top {
+margin-bottom: 5px;
+}
+.bar{
+margin-top: 5px;
+}
+.user-info{
+margin-top: 10px;
+}
+.index-page {
+width: 50%;
+height: 500px;
+border-radius: 75px;
+margin: auto;
+padding: 15px;
+border: solid black 5px;
+
+}
+.text {
+
+margin-top: 160px;
+marging-left: auto;
+marging-right: auto;
+}
+h1{
+text-align: center;
+font-family: 'Chewy', cursive;
+font-size: 90px;
+
+}
+a {
+
+font-family: 'Fjalla One', sans-serif;
+font-size: 20px;
+}
+.form {
+margin-left: 60px;
+}
+.labels {
+font-family: 'Fjalla One', sans-serif;
+font-size: 17px;
+}
+h2 {
+font-family: 'Fjalla One', sans-serif;
+font-size: 45px;
+}
+#unhappy {
+font-family: 'Fjalla One', sans-serif;
+font-size: 17px;
+
+}
+.user_grav{
+border-radius: 20px;
+}
+.user_links {
+margin-top:200px;
+float: right;
+margin-right: 100px;
+}
+.user-prof {
+margin-top: 50px;
+width: 400px;
+float: left;
+margin-left: 60px;
+}
