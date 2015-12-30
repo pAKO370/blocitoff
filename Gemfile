@@ -28,5 +28,3 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Bootstrap for CSS
 gem 'bootstrap-sass'
-# devise
-gem 'devise'
