@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'items/index'
+
   get 'user/index'
 
   #get 'user/show'
@@ -9,8 +11,10 @@ Rails.application.routes.draw do
 
   #get 'welcome/about'
 
-  resources :users, only: [:edit, :update, :show]
-
+  resources :users, only: [:edit, :update, :show] do
+    resources :items, only: [:new, :create]
+  end
+  
   get '/profile', to: 'users#show' #made route to display profile instead of user/2
 
   root 'welcome#index'

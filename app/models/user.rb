@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   validates :username,:presence => true,:uniqueness => {:case_sensitive => false}
   validate :validate_username
 
+  has_many :items
+  
+
   attr_accessor :login
 
   def self.find_first_by_auth_conditions(warden_conditions)
