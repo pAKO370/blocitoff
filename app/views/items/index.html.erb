@@ -1,4 +1,10 @@
-<h1>Items#index</h1>
-<p>Find me in app/views/items/index.html.erb</p>
 
-<%= link_to "New Item", new_user_item_path(current_user), class: 'btn btn-primary'%>
+<h1>Items</h1>
+
+<div class= "items">
+  <%= render partial: 'items', locals: {user: current_user,items: @items} %>
+  <br>
+
+
+  <%= link_to "New Item", new_user_item_path(current_user), class: 'btn btn-primary'%>
+</div>
