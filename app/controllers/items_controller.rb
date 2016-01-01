@@ -5,9 +5,12 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
   end
+
   def new
     @item = Item.new
+    @user = User.find(params[:user_id])
   end
+  
   def create
     @user = User.find(params[:user_id])
     @item = Item.new
