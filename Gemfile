@@ -30,3 +30,5 @@ gem 'turbolinks'
 gem 'bootstrap-sass'
 # devise
 gem 'devise'
+# seeds
+gem 'faker'
