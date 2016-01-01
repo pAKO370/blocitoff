@@ -1,12 +1,14 @@
 
-<div class= 'row'>
-    <div class ='col-md-8'>
       <% user.items.each do |item| %>
         <div class='media'>
-          <div class='media-body'>
+          <div class='media-body outline'>
             <%= "#{item.name}" %>
+          </div>
+          <div class='media-body outline'>
+            <%= "Time Left" %>
+          </div>
+          <div class='media-body outline outline-right'>
+            <%= "Delete Button" %>
           </div>
         </div>
       <% end %>
-    </div>
-  </div>

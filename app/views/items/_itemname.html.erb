@@ -1,0 +1,11 @@
+<div class= 'row'>
+    <div class ='col-md-8'>
+      <% user.items.each do |item| %>
+        <div class='media'>
+          <div class='media-body'>
+            <%= "#{item.name}" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>

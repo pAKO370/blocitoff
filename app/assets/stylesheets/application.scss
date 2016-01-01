@@ -94,13 +94,32 @@ float: left;
 margin-left: 60px;
 }
 .items{
+  width: 90%;
   padding-left: 50px;
   padding-bottom: 50px;
 }
 h3{
 font-family: 'Fjalla One', sans-serif;
-font-size: 35px;
+font-size: 20px;
 }
 .item_top {
   margin-bottom: 80px;
+}
+.outline {
+  
+  border-left: solid black 2px;
+  border-top: solid black 2px;
+  border-bottom: solid black 2px;
+  padding: 20px;
+  width: 40%;
+  
+  
+}
+.outline-right {
+  border-right: solid black 2px;
+
+}
+.item-list {
+  width: 800px;
+  margin: auto;
 }
