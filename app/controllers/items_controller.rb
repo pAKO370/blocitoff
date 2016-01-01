@@ -1,4 +1,7 @@
 class ItemsController < ApplicationController
+
+  
+
   def index
     @items = Item.all
   end
@@ -7,8 +10,9 @@ class ItemsController < ApplicationController
   end
   def create
     @user = User.find(params[:user_id])
-    @item = @user.items.new(params[:name])
-    #@new_item = Item.new
+    @item = Item.new
+    @item.name = params[:item][:name]
+    @item.user = @user
 
     if @item.save
       flash[:notice] = "Item saved"

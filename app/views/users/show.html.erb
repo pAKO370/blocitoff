@@ -10,13 +10,20 @@
   <a href="https://en.gravatar.com/">Edit Gravatar</a> 
   
 </div>
-<div class='user_links'>
-  <p>Link to Users To Do Items #</p>
+
+  
   <% end %>
-  <p> Number of users to do items</p>
+  <div class='user_links'>
+    <div class = 'item_top'>
+    <h2>Users To Do Items</h2>
+    <h5 class="pull-right"><%="Number of items: #{@user.items.count}"%>" </h5>
+  </div>
+  <h4><%= render partial: 'items/items', locals: {user: @user}%></h4>
+  
 
 
 </div>
 
-<%= render @user.items %>
+
+
 
