@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   #get 'welcome/about'
 
   resources :users, only: [:edit, :update, :show] do
-    resources :items, only: [:new, :create]
+    resources :items, only: [:new, :create,:destroy]
   end
   
   get '/profile', to: 'users#show' #made route to display profile instead of user/2

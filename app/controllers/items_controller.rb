@@ -22,7 +22,24 @@ class ItemsController < ApplicationController
       redirect_to items_index_path
     else
       flash.now[:alert] = "There was a problem saving your item"
-      render :new
+      redirect_to items_index_path
+    end
+  end
+  def destroy
+    @user = User.find(params[:user_id])
+    @item = @user.items.find(params[:id])
+    
+
+    if @item.destroy
+      flash[:notice] = "Item deleted"
+      
+    else
+      flash.now[:alert] = "There was a problem deleting your item"
+      
+    end
+    respond_to do |format|
+      format.html
+      format.js
     end
   end
 end
