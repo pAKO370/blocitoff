@@ -16,15 +16,21 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.name = params[:item][:name]
     @item.user = @user
+    @new_item = Item.new
 
     if @item.save
       flash[:notice] = "Item saved"
-      redirect_to items_index_path
+      
     else
       flash.now[:alert] = "There was a problem saving your item"
-      redirect_to items_index_path
+      
     end
+  
+    respond_to do |format|
+      format.html
+      format.js
   end
+end
   def destroy
     @user = User.find(params[:user_id])
     @item = @user.items.find(params[:id])

@@ -21,6 +21,7 @@
 body {
 
 background-image: url("http://backgroundidea.info/wp-content/uploads/2015/03/plain-white-backgrounds-for-tumblr-wallpapers-for-simple-white-tumblr-backgrounds-awesome.jpg");
+padding: 40px;
 
 }
 
@@ -111,7 +112,7 @@ font-size: 20px;
   border-top: solid black 2px;
   border-bottom: solid black 2px;
   padding: 20px;
-  width: 40%;
+  width: 100%;
   
   
 }
@@ -122,8 +123,16 @@ font-size: 20px;
 .item-list {
   width: 800px;
   margin: auto;
+  margin-bottom: 100px;
+ 
 }
 .items-form{
-  float: left;
 
-}
+width: 800px;
+height: 20px;
+margin-bottom: 10px;
+  }
+  .clear-form{
+
+  margin-top: 10px;
+  }

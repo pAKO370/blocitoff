@@ -1,13 +1,11 @@
 
 <h1>Items</h1>
-
 <div class="item-list">
-  
-  <h3><%= render current_user.items %></h3>
-  <br>
+  <div class="js-items">
+    <h3><%= render current_user.items %></h3>
 
-<%= render partial: 'form', locals: {user: @user, item: Item.new}  %>
-
-
-<br>
+  <div class='new-items items-form'>
+    <%= render partial: 'form', locals: {user: current_user, item: Item.new}  %>
+  </div>  
+</div>
 </div>

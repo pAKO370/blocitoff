@@ -1,5 +1,5 @@
-<div class="col-md-4">
-  <%= form_for [user,item], :url => user_items_path(user_id: current_user) do |f| %>
+<div class="items-form">
+  <%= form_for [user,item],remote: true do |f| %>
 
     <div class="form-group">
         <%= f.label :name  %>
