@@ -1,0 +1,11 @@
+<div class='media' id='<%= "item-#{item.id}" %>'>
+  <div class='media-body outline'>
+    <%= "#{item.name}" %>
+  </div>
+  <div class='media-body outline'>
+    <%= "Time Left" %>
+  </div>
+  <div class='media-body outline outline-right'>
+    <%= link_to "Delete",[item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
+  </div>
+</div>

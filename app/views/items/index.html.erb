@@ -3,9 +3,11 @@
 
 <div class="item-list">
   
-  <h3><%= render partial: 'items', locals: {user: current_user}%></h3>
+  <h3><%= render current_user.items %></h3>
   <br>
-    <%= link_to "New Item", new_user_item_path(current_user), class: 'btn btn-primary'%>
+
+<%= render partial: 'form', locals: {user: @user, item: Item.new}  %>
+
+
+<br>
 </div>
-
-
