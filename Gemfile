@@ -32,3 +32,5 @@ gem 'bootstrap-sass'
 gem 'devise'
 # seeds
 gem 'faker'
+# adds automatic rake function
+gem 'whenever', :require => false
