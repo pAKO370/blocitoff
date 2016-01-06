@@ -1,3 +1,4 @@
+<!--divides into individual boxes-->
 <div class='media' id='<%= "item-#{item.id}" %>'>
   <div class='media-body outline'>
     <%= "#{item.name}" %>
@@ -5,7 +6,10 @@
   <div class='media-body outline'>
      Time Remaining<%=":  #{time_remaining(item)}" %>
   </div>
+  <div class='media-body outline'>
+    Edit
+  </div>
   <div class='media-body outline outline-right'>
-    <%= link_to "Delete",[item.user, item], method: :delete, remote: true, class: 'glyphicon glyphicon-ok' %>
+    <%= check_box_tag "item_ids[]", item.id  %>
   </div>
 </div>

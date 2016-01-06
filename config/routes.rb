@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: [:show] do
-    resources :items, only: [:index, :new, :create,:destroy]
+    resources :items, only: [:index, :new, :create, :destroy]
+    delete 'items', to: 'items#destroy_multiple'
   end
   
   get '/profile', to: 'users#show' #made route to display profile instead of user/2
