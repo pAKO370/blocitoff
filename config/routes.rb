@@ -1,18 +1,10 @@
 Rails.application.routes.draw do
-  get 'items/index'
 
-  get 'user/index'
-
-  #get 'user/show'
 
   devise_for :users
 
-  #get 'welcome/index'
-
-  #get 'welcome/about'
-
-  resources :users, only: [:edit, :update, :show] do
-    resources :items, only: [:new, :create,:destroy]
+  resources :users, only: [:show] do
+    resources :items, only: [:index, :new, :create,:destroy]
   end
   
   get '/profile', to: 'users#show' #made route to display profile instead of user/2

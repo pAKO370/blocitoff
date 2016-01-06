@@ -5,7 +5,7 @@
     <h3><%= render current_user.items %></h3>
 
   <div class='new-items items-form'>
-    <%= render partial: 'form', locals: {user: current_user, item: Item.new}  %>
+    <%= render partial: 'form', locals: {user: @user, item: Item.new}  %>
   </div>  
 </div>
 </div>
