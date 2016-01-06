@@ -1,4 +1,4 @@
-<% if current_user == @user %>
+
 <div class="user-prof">
   <div>
     <h2><%= @user.username %> Profile</h2>
@@ -20,7 +20,7 @@
 
   <h4><%= render partial: 'items/itemname', locals: {user: @user}%></h4>
 </div>
-<% end %>
+
 
 
 

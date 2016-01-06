@@ -34,3 +34,5 @@ gem 'devise'
 gem 'faker'
 # adds automatic rake function
 gem 'whenever', :require => false
+#user roles
+gem 'pundit'

@@ -5,6 +5,7 @@ class ItemsController < ApplicationController
   def index
     @user = current_user
     @items = Item.all
+    authorize @items
   end
 
   def new
@@ -18,6 +19,7 @@ class ItemsController < ApplicationController
     @item.name = params[:item][:name]
     @item.user = @user
     @new_item = Item.new
+    authorize @item
 
     if @item.save
       flash[:notice] = "Item saved"
