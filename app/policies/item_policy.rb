@@ -24,15 +24,18 @@ attr_reader :current_user, :item
   end
 
   def update?
-    false
+    current_user
   end
 
   def edit?
-    update?
+    current_user
   end
 
   def destroy?
-    false
+    current_user
+  end
+  def destroy_multiple?
+    current_user
   end
 end
 

@@ -8,8 +8,9 @@
       <br>
     <% end %>
     <div class='new-items items-form'>
+      <h4>New To Do Item</h4>
       <%= render partial: 'form', locals: {user: @user, item: Item.new}  %><!--form for creating a new item-->
-      
+
     </div>  
   </div>
 </div>

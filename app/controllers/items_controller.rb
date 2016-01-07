@@ -18,21 +18,22 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.name = params[:item][:name]
     @item.user = @user
-    @new_item = Item.new
+    #@new_item = Item.new
     authorize @item
 
     if @item.save
       flash[:notice] = "Item saved"
+      redirect_to user_items_path
       
     else
       flash.now[:alert] = "There was a problem saving your item"
       
     end
   
-    respond_to do |format| # for ajax
-      format.html
-      format.js
-  end
+    #respond_to do |format| # for ajax
+      #format.html
+     # format.js
+  #end
 end
   def destroy
     @user = User.find(params[:user_id])
@@ -78,6 +79,8 @@ end
   def destroy_multiple
     @user = User.find(params[:user_id])
     @items = Item.where(id: params[:item_ids])
+    @item = @items
+    authorize @item
     if @items.destroy_all
       flash[:notice] = "Items deleted"
       redirect_to :back
