@@ -51,6 +51,29 @@ end
       format.js
     end
   end
+  def edit
+    @user = User.find(params[:user_id])
+    @item = Item.find(params[:id])
+
+  end
+
+  def update
+    @user = User.find(params[:user_id])
+    @item = Item.find(params[:id])
+    @item.name = params[:item][:name]
+    @item.user = @user
+    
+    #authorize @item
+    
+    if @item.save
+      flash[:notice] = "Item was edited"
+      redirect_to user_items_path
+      
+    else
+      flash.now[:alert] = "There was a problem editing your item"
+      
+    end
+  end
 
   def destroy_multiple
     @user = User.find(params[:user_id])

@@ -7,7 +7,7 @@
      Time Remaining<%=":  #{time_remaining(item)}" %>
   </div>
   <div class='media-body outline'>
-    Edit
+    <%= link_to "Edit", edit_user_item_path(current_user,id: item.id), class: 'btn btn-primary btn-sm' %>
   </div>
   <div class='media-body outline outline-right'>
     <%= check_box_tag "item_ids[]", item.id  %>
