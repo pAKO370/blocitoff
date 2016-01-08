@@ -3,7 +3,7 @@
 <div class="item-list">
   <div class="js-items">
     <%= form_tag user_items_path(@user), method: :delete do %>
-      <h3><%= render current_user.items %></h3>
+      <h3><%= render @items %></h3>
       <%= submit_tag "Delete Items", class: 'btn btn-xs btn-danger pull-right' %>
       <br>
     <% end %>

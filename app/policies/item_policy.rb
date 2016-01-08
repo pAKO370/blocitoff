@@ -1,6 +1,5 @@
 class ItemPolicy < ApplicationPolicy
-
-attr_reader :current_user, :item
+  attr_reader :current_user, :item
 
   def initialize(current_user, item)
     @current_user = current_user
@@ -12,11 +11,11 @@ attr_reader :current_user, :item
   end
 
   def show?
-    @user == current_user 
+    item.user == current_user 
   end
 
   def create?
-    current_user
+    item.user == current_user
   end
 
   def new?
@@ -24,18 +23,22 @@ attr_reader :current_user, :item
   end
 
   def update?
-    current_user
+    item.user == current_user
   end
 
   def edit?
-    current_user
+    update?
   end
 
   def destroy?
-    current_user
+    item.user == current_user
   end
+
   def destroy_multiple?
-    current_user
+    items = item
+    items.each do |item|
+      return false if item.user != current_user
+    end
   end
 end
 

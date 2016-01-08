@@ -1,10 +1,13 @@
 class ItemsController < ApplicationController
 
-  
+  rescue_from Pundit::NotAuthorizedError do
+    flash[:alert] = "You're not allowed to do that"
+    redirect_to :profile
+  end
 
   def index
-    @user = current_user#sets @user to use in partails
-    @items = Item.all
+    @user = User.find(params[:user_id])#sets @user to use in partails
+    @items = @user.items
     authorize @items
   end
 
@@ -79,14 +82,19 @@ end
   def destroy_multiple
     @user = User.find(params[:user_id])
     @items = Item.where(id: params[:item_ids])
-    @item = @items
-    authorize @item
+    puts "trying to authorize"
+    authorize @items
+    puts "authorized"
+    p @items
     if @items.destroy_all
+      puts "destroyed"
+      p @items
       flash[:notice] = "Items deleted"
-      redirect_to :back
+      redirect_to :root
     else
+      puts "not destroyed"
       flash[:alert] = "There was a problem deleting your item"
-      redirect_to :back
+      redirect_to :root
     end
   end
 end
