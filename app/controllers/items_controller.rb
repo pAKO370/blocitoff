@@ -27,10 +27,8 @@ class ItemsController < ApplicationController
     if @item.save
       flash[:notice] = "Item saved"
       redirect_to user_items_path
-      
     else
       flash.now[:alert] = "There was a problem saving your item"
-      
     end
   
     #respond_to do |format| # for ajax
@@ -43,24 +41,20 @@ class ItemsController < ApplicationController
     @user = User.find(params[:user_id])
     @item = @user.items.find(params[:id])
     
-
     if @item.destroy
       flash[:notice] = "Item deleted"
-      
     else
       flash.now[:alert] = "There was a problem deleting your item"
-      
     end
     respond_to do |format| # for ajax
       format.html
       format.js
     end
   end
-  
+
   def edit
     @user = User.find(params[:user_id])
     @item = Item.find(params[:id])
-
   end
 
   def update
@@ -74,10 +68,8 @@ class ItemsController < ApplicationController
     if @item.save
       flash[:notice] = "Item was edited"
       redirect_to user_items_path
-      
     else
       flash.now[:alert] = "There was a problem editing your item"
-      
     end
   end
 
