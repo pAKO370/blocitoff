@@ -36,8 +36,9 @@ class ItemsController < ApplicationController
     #respond_to do |format| # for ajax
       #format.html
      # format.js
-  #end
-end
+    #end
+  end
+
   def destroy
     @user = User.find(params[:user_id])
     @item = @user.items.find(params[:id])
@@ -55,6 +56,7 @@ end
       format.js
     end
   end
+  
   def edit
     @user = User.find(params[:user_id])
     @item = Item.find(params[:id])
@@ -82,13 +84,8 @@ end
   def destroy_multiple
     @user = User.find(params[:user_id])
     @items = Item.where(id: params[:item_ids])
-    puts "trying to authorize"
     authorize @items
-    puts "authorized"
-    p @items
     if @items.destroy_all
-      puts "destroyed"
-      p @items
       flash[:notice] = "Items deleted"
       redirect_to :root
     else

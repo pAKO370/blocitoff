@@ -42,7 +42,7 @@ describe ItemsController, type: :controller do
     end
   end
 
-  describe "DELETE #destroy_multiple" do
+  describe "DELETE destroy_multiple" do
     let(:user_item_1) { user.items.create!(name: "an item") }
     let(:user_item_2) { user.items.create!(name: "an item") }
     let(:other_user_item) { other_user.items.create!(name: "an item") }
