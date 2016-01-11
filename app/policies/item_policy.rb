@@ -1,4 +1,4 @@
-class ItemPolicy < ApplicationPolicy
+class ItemPolicy
   attr_reader :current_user, :item
 
   def initialize(current_user, item)
@@ -35,10 +35,7 @@ class ItemPolicy < ApplicationPolicy
   end
 
   def destroy_multiple?
-    items = item
-    items.each do |item|
-      return false if item.user != current_user
-    end
+    items = item  # actually contains a collection
+    items.all?{ |item| item.user == current_user }
   end
 end
-

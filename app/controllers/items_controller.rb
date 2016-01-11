@@ -27,38 +27,34 @@ class ItemsController < ApplicationController
     if @item.save
       flash[:notice] = "Item saved"
       redirect_to user_items_path
-      
     else
       flash.now[:alert] = "There was a problem saving your item"
-      
     end
   
     #respond_to do |format| # for ajax
       #format.html
      # format.js
-  #end
-end
+    #end
+  end
+
   def destroy
     @user = User.find(params[:user_id])
     @item = @user.items.find(params[:id])
     
-
     if @item.destroy
       flash[:notice] = "Item deleted"
-      
     else
       flash.now[:alert] = "There was a problem deleting your item"
-      
     end
     respond_to do |format| # for ajax
       format.html
       format.js
     end
   end
+
   def edit
     @user = User.find(params[:user_id])
     @item = Item.find(params[:id])
-
   end
 
   def update
@@ -72,23 +68,16 @@ end
     if @item.save
       flash[:notice] = "Item was edited"
       redirect_to user_items_path
-      
     else
       flash.now[:alert] = "There was a problem editing your item"
-      
     end
   end
 
   def destroy_multiple
     @user = User.find(params[:user_id])
     @items = Item.where(id: params[:item_ids])
-    puts "trying to authorize"
     authorize @items
-    puts "authorized"
-    p @items
     if @items.destroy_all
-      puts "destroyed"
-      p @items
       flash[:notice] = "Items deleted"
       redirect_to :root
     else
