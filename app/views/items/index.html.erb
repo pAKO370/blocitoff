@@ -1,5 +1,6 @@
 
 <h1>Items</h1>
+<% if@user == current_user %>
 <div class="item-list">
   <div class="js-items">
     <%= form_tag user_items_path(@user), method: :delete do %>
@@ -9,8 +10,11 @@
     <% end %>
     <div class='new-items items-form'>
       <h4>New To Do Item</h4>
-      <%= render partial: 'form', locals: {user: @user, item: Item.new}  %><!--form for creating a new item-->
+      <%= render partial: 'form', locals: {user: @user, item: Item.new, remote: true}  %><!--form for creating a new item-->
 
     </div>  
   </div>
 </div>
+<% else %>
+<%= flash[:alert] = "You are not allowed to view this page" %>
+<% end %>

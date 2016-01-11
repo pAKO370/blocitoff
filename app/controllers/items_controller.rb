@@ -79,7 +79,7 @@ class ItemsController < ApplicationController
     authorize @items
     if @items.destroy_all
       flash[:notice] = "Items deleted"
-      redirect_to :root
+      redirect_to user_items_path
     else
       puts "not destroyed"
       flash[:alert] = "There was a problem deleting your item"

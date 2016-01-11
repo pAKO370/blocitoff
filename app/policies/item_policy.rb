@@ -8,6 +8,7 @@ class ItemPolicy
 
   def index?
     current_user
+
   end
 
   def show?
