@@ -21,20 +21,20 @@ class ItemsController < ApplicationController
     @item = Item.new
     @item.name = params[:item][:name]
     @item.user = @user
-    #@new_item = Item.new
+    @new_item = Item.new
     authorize @item
 
     if @item.save
       flash[:notice] = "Item saved"
-      redirect_to user_items_path
+      
     else
       flash.now[:alert] = "There was a problem saving your item"
     end
   
-    #respond_to do |format| # for ajax
-      #format.html
-     # format.js
-    #end
+    respond_to do |format| # for ajax
+      format.html
+      format.js
+    end
   end
 
   def destroy
