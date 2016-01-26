@@ -40,3 +40,5 @@ gem 'faker'
 gem 'whenever', :require => false
 #user roles
 gem 'pundit'
+ # for enviroment variables
+ gem 'figaro', '1.0'
